@@ -1,0 +1,37 @@
+//字数超出省略
+ellipsis($size)
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $size;
+
+//flex布局
+flex($direction, $align, $justify)
+  display flex
+  flex-direction $direction
+  align-items $align
+  justify-content $justify
+
+//背景图片background-image
+bg-image($url)
+  background-image url($url + '@2x.png')
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+  background-image url($url + '@3x.png')
+
+// 不换行
+no-wrap()
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+
+// 扩展点击区域
+extend-click()
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    top: -10px
+    left: -10px
+    right: -10px
+    bottom: -10px
